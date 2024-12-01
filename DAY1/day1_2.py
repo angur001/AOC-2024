@@ -12,8 +12,8 @@ f = open("input.txt", "r")
 right_array = []
 left_array = []
 for line in f:
-    r = line.strip().split(" ")[0]
-    l = line.strip().split(" ")[3]
+    r = line.strip().split()[0]
+    l = line.strip().split()[1]
     right_array.append(int(r))
     left_array.append(int(l))
 
