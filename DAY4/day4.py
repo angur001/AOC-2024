@@ -19,8 +19,6 @@ def countDiagonally(puzzle):
         diag_2.append("".join([puzzle[j+i][len(puzzle)-1-j] for j in range(len(puzzle)-i)]))
     return len(pattern.findall(",".join(diag_1))) + len(pattern.findall(",".join(diag_2)))
     
-    
-
 
 f = open("input.txt", "r")
 puzzle = [line.strip() for line in f.readlines()]
