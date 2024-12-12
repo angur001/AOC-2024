@@ -1,5 +1,3 @@
-
-
 f = open("input.txt", "r")
 space =[[elem for elem in line.strip()] for line in f.readlines()]
 
