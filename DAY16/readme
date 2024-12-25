@@ -1,0 +1,29 @@
+Solved this with djikstra's algorithm. I tried to adapt bfs first but it didn't actually work. bfs is good only when all paths have the same weight.
+djikstra's algorithm works as follows: 
+
+1. **Initialization**:
+    - We have to track two things:
+        - A `distances` dictionary that will store the minimum distance from the source to each node. 
+            We initialize it with infinity for all nodes except the source node, for which we initialize it with 0.
+        - A `priority queue` that will store the nodes that we have to visit next. 
+            The priority queue will always return the node with the smallest distance from the source.
+
+2. **Starting Point**:
+    - We start by adding the source node to the priority queue and setting its distance to 0.
+
+3. **Main Loop**:
+    - We loop until the priority queue is empty.
+    - In each iteration:
+        - Pop the node with the smallest distance from the priority queue.
+        - Iterate over all its neighbors.
+        - If the distance from the source to the neighbor is greater than the distance from the source to the current node plus the weight of the edge between the current node and the neighbor:
+            - Update the distance from the source to the neighbor.
+            - Add the neighbor to the priority queue.
+
+
+4. **Custom djikstra**:
+In my case the key for the distances dictionarry look something like this '(row, col, direction)' where row,column are used for position and direction is added because each position can have 4 directions.
+this way we can identify uniquely each position and direction.
+
+The priority queue had elements in the form of (cost ,(row, col), direction) where cost is the cost from the source to the current position.
+(row, col) is the position and direction is the direction we are facing so that when we go back to this position we know what direction we are facing.
