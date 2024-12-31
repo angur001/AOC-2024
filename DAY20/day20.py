@@ -58,7 +58,7 @@ def print_cheat(grid, first, second):
         print(''.join(line))
 
 def get_cheats(path,grid):
-    cheats = {} # key is how many steps the cheat saves and values are how many cheats that save this exacct number of steps
+    cheats = {}
     for i in range(len(path)):
         for j in range(i,len(path)):
             if (path[i][0] == path[j][0] and abs(path[i][1]-path[j][1]) == 2 and grid[path[i][0]][(path[i][1]+path[j][1])//2] == '#') or (path[i][1] == path[j][1] and abs(path[i][0]-path[j][0]) == 2 and grid[(path[i][0]+path[j][0])//2][path[i][1]] == '#'):
